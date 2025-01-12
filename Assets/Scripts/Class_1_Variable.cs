@@ -9,7 +9,7 @@
 using UnityEngine;
 
 //修飾詞，類別關鍵字(腳本)，類別名稱(腳本名稱)
-//
+//在腳本後添加：MonoBehaviour 可以讓此腳本掛在 Unity 的物件上
 public class Class_1_Variable : MonoBehaviour
 {
     //程式內的括號都是成對出現 () [] {} <> '' ""
