@@ -1,70 +1,102 @@
-using NUnit.Framework.Internal;
+ï»¿using NUnit.Framework.Internal;
 using UnityEngine;
 namespace KID
 {
     /// <summary>
-    /// °}¦C Array
+    /// é™£åˆ— Array
     /// </summary>
     public class class_6_2_Array : MonoBehaviour
     {
-        // ¤£¨Ï¥Î°}¦Cªº¼gªk¡G
-        // ¥Ö¥d¥C¡B¤p¤õÀs¡B¥Ö¥dÃ~
-        public string card1 = "¥Ö¥d¥C", card2 = "¤p¤õÀs", card3 = "¥Ö¥dÃ~";
-        
-        // ¨Ï¥Î°}¦Cªº¼gªk¡G 
-        // °}¦C¡G¥Î¨ÓÀx¦s¦hµ§¬Û¦PÃş«¬ªº¸ê®Æ
-        // ²Ä¤@ºØ¡G¤£«ü©w­È¡A³z¹L Unity ­±ªO¿é¤J
-        // ­×¹¢µü ¸ê®ÆÃş«¬[] °}¦C¦WºÙ;
+        #region ä¸€ ~ ä¸‰å¾®é™£åˆ—
+        // ä¸ä½¿ç”¨é™£åˆ—çš„å¯«æ³•ï¼š
+        // çš®å¡ä¸˜ã€å°ç«é¾ã€çš®å¡ç¸
+        public string card1 = "çš®å¡ä¸˜", card2 = "å°ç«é¾", card3 = "çš®å¡ç¸";
+
+        // ä½¿ç”¨é™£åˆ—çš„å¯«æ³•ï¼š 
+        // é™£åˆ—ï¼šç”¨ä¾†å„²å­˜å¤šç­†ç›¸åŒé¡å‹çš„è³‡æ–™
+        // ç¬¬ä¸€ç¨®ï¼šä¸æŒ‡å®šå€¼ï¼Œé€é Unity é¢æ¿è¼¸å…¥
+        // ä¿®é£¾è© è³‡æ–™é¡å‹[] é™£åˆ—åç¨±;
         public string[] cards;
-        // ²Ä¤GºØ¡Gª½±µ©w¸q°}¦Cªº¼Æ¶q
-        // ©w¸q¤@­ÓµP²Õ1¡A¥i¥H©ñ¤­±i¥dµP
+        // ç¬¬äºŒç¨®ï¼šç›´æ¥å®šç¾©é™£åˆ—çš„æ•¸é‡
+        // å®šç¾©ä¸€å€‹ç‰Œçµ„1ï¼Œå¯ä»¥æ”¾äº”å¼µå¡ç‰Œ
         public string[] deck1 = new string[5];
-        // ²Ä¤TºØ¡Gª½±µ©w¸q°}¦Cªº­È 
-        public string[] deck2 = {"«æ­á³¾","½äÁø","Ä_¥Û®ü¬P" };
+        // ç¬¬ä¸‰ç¨®ï¼šç›´æ¥å®šç¾©é™£åˆ—çš„å€¼ 
+        public string[] deck2 = { "æ€¥å‡é³¥", "è³­éœ", "å¯¶çŸ³æµ·æ˜Ÿ" };
 
-        // ¤Gºû°}¦C
-        public string[,] inventory = { {"¬õ¦âÃÄ¤ô","ÂÅ¦âÃÄ¤ô"},{"¬µ¼u","ª÷¹ô" } };
+        // äºŒç¶­é™£åˆ—
+        public string[,] inventory = { { "ç´…è‰²è—¥æ°´", "è—è‰²è—¥æ°´" }, { "ç‚¸å½ˆ", "é‡‘å¹£" } };
 
-        // ¤Tºû°}¦C
-        public string[,,] shop = 
+        // ä¸‰ç¶­é™£åˆ—
+        public string[,,] shop =
         {
-            { {"¤p¤M","¬ü¤u¤M"},{"ªZ¤h¤M","±OÀs¤M" } },
-            { {"ºëÆF²y","°ª¯Å²y"},{"¤j®v²y","±_¥Ş²y" } }
+            { {"å°åˆ€","ç¾å·¥åˆ€"},{"æ­¦å£«åˆ€","å± é¾åˆ€" } },
+            { {"ç²¾éˆçƒ","é«˜ç´šçƒ"},{"å¤§å¸«çƒ","å·¢ç©´çƒ" } }
         };
+        #endregion
+
+        private int[][] numbers = new int[2][];
+        private int[][,] count = new int[2][,];
+
 
         private void Start()
         {
-            Debug.Log($"<color=#f32>Cards ªº²Ä¤T±i¥d¤ù¡G{cards[2]}</color>");
+            #region ä¸€ç¶­é™£åˆ—
+            Debug.Log($"<color=#f32>Cards çš„ç¬¬ä¸‰å¼µå¡ç‰‡ï¼š{cards[2]}</color>");
 
 
 
-            deck2[2] = "³Ç¥§Àt";
-            Debug.Log($"<color=#f39>½s¸¹[0,1]ªº¹D¨ã¡G{deck2[2]}</color>");
+            deck2[2] = "å‚‘å°¼é¾œ";
+            Debug.Log($"<color=#f39>ç·¨è™Ÿ[0,1]çš„é“å…·ï¼š{deck2[2]}</color>");
+            #endregion
 
-            // ¦s¨ú¤Gºû°}¦C
-            Debug.Log($"<color=#3f3>½s¸¹[0,1]ªº¹D¨ã¡G{inventory[0, 1]}</color>");
+            #region äºŒç¶­èˆ‡ä¸‰ç¶­é™£åˆ—
+            // å­˜å–äºŒç¶­é™£åˆ—
+            Debug.Log($"<color=#3f3>ç·¨è™Ÿ[0,1]çš„é“å…·ï¼š{inventory[0, 1]}</color>");
 
-            inventory[1, 1] = "¦n¶ËÃÄ";
-            Debug.Log($"<color=#3f3>½s¸¹[1,1]ªº¹D¨ã¡G{inventory[1, 1]}</color>");
+            inventory[1, 1] = "å¥½å‚·è—¥";
+            Debug.Log($"<color=#3f3>ç·¨è™Ÿ[1,1]çš„é“å…·ï¼š{inventory[1, 1]}</color>");
 
-            // ¦s¨ú¤Tºû°}¦C
-            // ¨ú±o±OÀs¤M
-            Debug.Log($"<color=#f3d>½s¸¹[0,1,1]ªº¹D¨ã¡G{shop[0,1, 1]}</color>");
+            // å­˜å–ä¸‰ç¶­é™£åˆ—
+            // å–å¾—å± é¾åˆ€
+            Debug.Log($"<color=#f3d>ç·¨è™Ÿ[0,1,1]çš„é“å…·ï¼š{shop[0, 1, 1]}</color>");
 
-            // ³]©w°ª¯Å²y¬°¶W¯Å²y
-            shop[1, 0, 1] = "¶W¯Å²y";
-            Debug.Log($"<color=#f3d>½s¸¹[1,0,1]ªº¹D¨ã¡G{shop[1, 0, 1]}</color>");
+            // è¨­å®šé«˜ç´šçƒç‚ºè¶…ç´šçƒ
+            shop[1, 0, 1] = "è¶…ç´šçƒ";
+            Debug.Log($"<color=#f3d>ç·¨è™Ÿ[1,0,1]çš„é“å…·ï¼š{shop[1, 0, 1]}</color>");
+            #endregion
 
 
-            // Àò±o°}¦Cªºªø«×©Mºû«×
-            // ¤@ºû ~ ¦hºû°}¦Cªºªø«×¡G°}¦C¦WºÙ.Length
-            Debug.Log($"<color=#f93>¤@ºû - µP²Õ 2 ªºªø«×¡G{deck2.Length}</color>");
-            Debug.Log($"<color=#f93>¤Gºû - ¹D¨ãªºªø«×¡G{inventory.Length}</color>");
-            Debug.Log($"<color=#f93>¤Tºû - °Ó«~ªºªø«×¡G{shop.Length}</color>");
-            // °}¦Cªººû«×¡G°}¦C¦WºÙ.Rank
-            Debug.Log($"<color=#f39>¤@ºû - µP²Õ 2 ªºªø«×¡G{deck2.Rank}</color>");
-            Debug.Log($"<color=#f39>¤Gºû - ¹D¨ãªºªø«×¡G{inventory.Rank}</color>");
-            Debug.Log($"<color=#f39>¤Tºû - °Ó«~ªºªø«×¡G{shop.Rank}</color>");
+            #region é™£åˆ—é•·åº¦å’Œç¶­åº¦
+            // ç²å¾—é™£åˆ—çš„é•·åº¦å’Œç¶­åº¦
+            // ä¸€ç¶­ ~ å¤šç¶­é™£åˆ—çš„é•·åº¦ï¼šé™£åˆ—åç¨±.Length
+            Debug.Log($"<color=#f93>ä¸€ç¶­ - ç‰Œçµ„ 2 çš„é•·åº¦ï¼š{deck2.Length}</color>");
+            Debug.Log($"<color=#f93>äºŒç¶­ - é“å…·çš„é•·åº¦ï¼š{inventory.Length}</color>");
+            Debug.Log($"<color=#f93>ä¸‰ç¶­ - å•†å“çš„é•·åº¦ï¼š{shop.Length}</color>");
+            // é™£åˆ—çš„ç¶­åº¦ï¼šé™£åˆ—åç¨±.Rank
+            Debug.Log($"<color=#f39>ä¸€ç¶­ - ç‰Œçµ„ 2 çš„é•·åº¦ï¼š{deck2.Rank}</color>");
+            Debug.Log($"<color=#f39>äºŒç¶­ - é“å…·çš„é•·åº¦ï¼š{inventory.Rank}</color>");
+            Debug.Log($"<color=#f39>ä¸‰ç¶­ - å•†å“çš„é•·åº¦ï¼š{shop.Rank}</color>"); 
+            #endregion
+
+
+            //ä¸è¦å‰‡é™£åˆ—ï¼šåŸºæœ¬ç·´ç¿’
+            numbers[0] = new int[] { 1, 3, 5 };
+            numbers[1] = new int[] { 9, 8 };
+
+            //å–å¾—æ•¸å­— 3 å’Œ 9
+            Debug.Log($"<color=#3ff>ä¸è¦å‰‡é™£åˆ—çš„æ•¸å­— 3 ï¼š{numbers[0][1]}</color>");
+            Debug.Log($"<color=#3ff>ä¸è¦å‰‡é™£åˆ—çš„æ•¸å­— 9 ï¼š{numbers[1][0]}</color>");
+
+            //å°‡ 8 æ”¹æˆ 6
+            numbers[1][1] = 6;
+            Debug.Log($"<color=#3ff>ç¬¬äºŒåˆ—çš„ç¬¬äºŒå±¤ ï¼š{numbers[1][1]}</color>");
+
+            //ä¸è¦å‰‡é™£åˆ—ï¼šåŒ…å«å¤šå¾®é™£åˆ—
+            count[0] = new int[,] { { 1, 1 },{ 1, 1 } };
+            count[1] = new int[,] { { 2, 2, 2 }, { 2, 2, 2 } };
+            Debug.Log($"<color=#3ff>count ç¬¬äºŒåˆ—çš„ [ 0, 0 ] ï¼š{count[1][0,0]}</color>");
+
+
 
         }
 
