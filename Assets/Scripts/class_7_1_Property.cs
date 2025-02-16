@@ -1,57 +1,63 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 namespace KID 
 {
     
     /// <summary>
-    /// Äİ©Ê Property
+    /// å±¬æ€§ Property
     /// </summary>
     public class class_7_1_Property : MonoBehaviour
     {
-        #region »{ÃÑÄİ©Ê Property
-        // ¤½¶}ªºÅÜ¼Æ¡G¥i¥HÅı¥~³¡Åª¨ú»P¼g¤J
+        #region èªè­˜å±¬æ€§ Property
+        // å…¬é–‹çš„è®Šæ•¸ï¼šå¯ä»¥è®“å¤–éƒ¨è®€å–èˆ‡å¯«å…¥
         public float moveSpeed = 3.5f;
 
-        // ¨p¤HªºÅÜ¼Æ¡G¤£¤¹³\¥~³¡Åª¨ú»P¼g¤J
+        // ç§äººçš„è®Šæ•¸ï¼šä¸å…è¨±å¤–éƒ¨è®€å–èˆ‡å¯«å…¥
         private float turnSpeed = 12.7f;
 
-        // ¤½¶}ªºÄİ©Ê¡G¤¹³\¦s¨ú
+        // å…¬é–‹çš„å±¬æ€§ï¼šå…è¨±å­˜å–
         public float runSpeed { get; set; }
-        // ¨p¤HªºÄİ©Ê¡G¤£¤¹³\¦s¨ú
+        // ç§äººçš„å±¬æ€§ï¼šä¸å…è¨±å­˜å–  (ä¸€èˆ¬ä¸æœƒé€™æ¨£å¯«)
         private float sprintSpeed { get; set; }
-        // ¤½¶}ªºÄİ©Ê¡G¥u¦³ set ¥Nªí°ß¿W (¥u¯àÅª¨ú¤£¯à¼g¤J)
+        // å…¬é–‹çš„å±¬æ€§ï¼šåªæœ‰ set ä»£è¡¨å”¯ç¨ (åªèƒ½è®€å–ä¸èƒ½å¯«å…¥)
         public float jumpSpeed { get; }
 
 
         // prop + Tab
-        // ¦³¹w³]­ÈªºÄİ©Ê
+        // æœ‰é è¨­å€¼çš„å±¬æ€§
         public byte lv { get; set; } = 1;
 
         private void Awake()
         {
-            Debug.Log("-----¨ú±oÅÜ¼Æ»PÄİ©Ê-----");
+            Debug.Log("-----å–å¾—è®Šæ•¸èˆ‡å±¬æ€§-----");
             Debug.Log(moveSpeed);
             Debug.Log(turnSpeed);
             Debug.Log(runSpeed);
             Debug.Log(sprintSpeed);
             Debug.Log(jumpSpeed);
             Debug.Log(lv);
-            Debug.Log("-----³]©wÅÜ¼Æ»PÄİ©Ê-----");
+            Debug.Log("-----è¨­å®šè®Šæ•¸èˆ‡å±¬æ€§-----");
             moveSpeed = 11.1f;
-            turnSpeed = 2.5f;               // ¨p¤HÅÜ¼Æ¦bÃş§O¤º¥i¥H³]©w
+            turnSpeed = 2.5f;               // ç§äººè®Šæ•¸åœ¨é¡åˆ¥å…§å¯ä»¥è¨­å®š
             runSpeed = 30;
             sprintSpeed = 60.2f;
-            //jumpSpeed = 90;               // ¨S¦³ set ªºÄİ©Ê¦bÃş§O¤º¤]µLªk³]©w
+            //jumpSpeed = 90;               // æ²’æœ‰ set çš„å±¬æ€§åœ¨é¡åˆ¥å…§ä¹Ÿç„¡æ³•è¨­å®š
             lv = 10;
+            Debug.Log(moveSpeed);
+            Debug.Log(turnSpeed);
+            Debug.Log(runSpeed);
+            Debug.Log(sprintSpeed);
+            Debug.Log(jumpSpeed);
+            Debug.Log(lv);
         }
         #endregion
 
-        // Äİ©ÊÁY¼g
+        // å±¬æ€§ç¸®å¯«
         public float hp { get; set; } = 100;
 
-        // Äİ©Ê¼Ğ·Ç¼gªk
-        // _mp ¥Î¨Ó¸ËÄİ©Ê mp ­Èªº®e¾¹
+        // å±¬æ€§æ¨™æº–å¯«æ³•
+        // _mp ç”¨ä¾†è£å±¬æ€§ mp å€¼çš„å®¹å™¨
         private float _mp = 50;
-        // Äİ©Ê¬Oµ¹¤©¥~³¡¦s¨úÅv­­ªºµ¡¤f
+        // å±¬æ€§æ˜¯çµ¦äºˆå¤–éƒ¨å­˜å–æ¬Šé™çš„çª—å£
         public float mp 
         { 
             get 
@@ -65,19 +71,19 @@ namespace KID
         }
 
 
-        // ¨ú±oÄİ©ÊªºÂ²¼g (½bÀY => Lambda)
-        // °ßÅªÄİ©Ê ¨¾¿m­È¬O30
+        // å–å¾—å±¬æ€§çš„ç°¡å¯« (ç®­é ­ => Lambda)
+        // å”¯è®€å±¬æ€§ é˜²ç¦¦å€¼æ˜¯30
         public int defence { get; } = 30;
-        // °ßÅªÄİ©Ê §ğÀ»­È¬O50  Lambda¬O§óºëÂ²ªº¼gªk
+        // å”¯è®€å±¬æ€§ æ”»æ“Šå€¼æ˜¯50  Lambdaæ˜¯æ›´ç²¾ç°¡çš„å¯«æ³•
         public int attack => 50;
 
 
         private void Start()
         {
-            Debug.Log($"<color=#77f>¦å¶qhp¡G{hp}</color>");
-            Debug.Log($"<color=#77f>­×§ï«eÅ]¤Omp¡G{mp}</color>");
+            Debug.Log($"<color=#77f>è¡€é‡hpï¼š{hp}</color>");
+            Debug.Log($"<color=#77f>ä¿®æ”¹å‰é­”åŠ›mpï¼š{mp}</color>");
             mp = 500;
-            Debug.Log($"<color=#77f>­×§ï«áÅ]¤Omp¡G{mp}</color>");
+            Debug.Log($"<color=#77f>ä¿®æ”¹å¾Œé­”åŠ›mpï¼š{mp}</color>");
         }
 
 

@@ -1,6 +1,9 @@
 using UnityEngine;
 namespace KID
 {
+    /// <summary>
+    /// 練習存取資料用
+    /// </summary>
     public class class_7_1_GetSetData : MonoBehaviour
     {
         public class_7_1_Property property;

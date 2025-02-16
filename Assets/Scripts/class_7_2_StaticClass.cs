@@ -1,32 +1,37 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 namespace MyNamespace
 {
     /// <summary>
-    /// ÀRºAÃş§O
-    /// ÀRºAÃş§O¤£¯àÄ~©Ó monoBehaviour¡A¤£¯à©ñ¦b Unity ªºª«¥ó¤W
+    /// éœæ…‹é¡åˆ¥
+    /// éœæ…‹é¡åˆ¥ä¸èƒ½ç¹¼æ‰¿ monoBehaviourï¼Œä¸èƒ½æ”¾åœ¨ Unity çš„ç‰©ä»¶ä¸Š
     /// </summary>
     public static class class_7_2_StaticClass
     {
-        // ±`¼Æ(ÀRºA)
-        // ±`¼Æ¬OµLªk­×§ïªº¡A¨Ã¥B»İ­n¦³¹w³]­È
+        // å¸¸æ•¸(éœæ…‹)
+        // å¸¸æ•¸æ˜¯ç„¡æ³•ä¿®æ”¹çš„ï¼Œä¸¦ä¸”éœ€è¦æœ‰é è¨­å€¼
         public const string playname = "KID";
-        // ÀRºA¥i¥H­×§ï¡A¤]¤£¥Îµ¹¤©¹w³]­È
+        // éœæ…‹å¯ä»¥ä¿®æ”¹ï¼Œä¹Ÿä¸ç”¨çµ¦äºˆé è¨­å€¼
         public static string playerWeapon;
 
-        // 
+        // éœæ…‹é¡åˆ¥å…§åªèƒ½æœ‰éœæ…‹æˆå“¡
+        public static int lv = 1;
+        public static float speed => 500;
 
+        public static void Run() 
+        {
+        
+        }
 
+        // éœæ…‹é¡åˆ¥å…§ä¸èƒ½æœ‰ééœæ…‹æˆå“¡ 
+        /*
+        public int count = 1;
+        public AudioClipLoadType rotate => 30.5f;
 
-
-
-
-
-
-
-        // 
-        //
-        // 
-
+        public void Walk() 
+        {
+        
+        }
+        */
         
     }
 }

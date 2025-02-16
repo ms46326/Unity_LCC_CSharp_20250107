@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &249497558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb681e4df569e146b05ab406348ac04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorwater: 10
+  inventoryWater: 10
 --- !u!4 &249497559
 Transform:
   m_ObjectHideFlags: 0
@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e1cdabe3ae82a47a752dc60d8b543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  class_7_2: {fileID: 249497558}
+  slimeGreen: {fileID: 945886224}
+  slimeBlue: {fileID: 1995093862}
 --- !u!1 &542628053
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945886223}
   - component: {fileID: 945886222}
+  - component: {fileID: 945886224}
   m_Layer: 0
   m_Name: "\u53F2\u840A\u59C6_\u7DA0"
   m_TagString: Untagged
@@ -323,6 +327,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945886224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945886221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e7b2dec084bf2498310646ff667f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
 --- !u!1 &1577236763
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995093861}
   - component: {fileID: 1995093860}
+  - component: {fileID: 1995093862}
   m_Layer: 0
   m_Name: "\u53F2\u840A\u59C6_\u85CD"
   m_TagString: Untagged
@@ -502,6 +520,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995093862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995093859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e7b2dec084bf2498310646ff667f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 200
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
