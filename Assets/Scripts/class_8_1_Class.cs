@@ -1,16 +1,16 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 namespace KID
 {
     /// <summary>
-    /// Ãş§O Class ¡G¥Î¨Ó©w¸q¤@­Óª«¥ó¥H¤Î©Ò¾Ö¦³ªº¸ê®Æ»P¥\¯à(¦¨­û)
+    /// é¡åˆ¥ Class ï¼šç”¨ä¾†å®šç¾©ä¸€å€‹ç‰©ä»¶ä»¥åŠæ‰€æ“æœ‰çš„è³‡æ–™èˆ‡åŠŸèƒ½(æˆå“¡)
     /// </summary>
     public class class_8_1_Class : MonoBehaviour
     {
         private void Awake()
         {
-            // ¹ê¨Ò¤Æ NPC ¨ÃÀx¦s¦b npcJack ÅÜ¼Æ¤º
+            // å¯¦ä¾‹åŒ– NPC ä¸¦å„²å­˜åœ¨ npcJack è®Šæ•¸å…§
             class_8_1_NPC npcJack = new class_8_1_NPC();
-            class_8_1_NPC npcKID = new class_8_1_NPC("KID","§A¦n°Ú~");
+            class_8_1_NPC npcKID = new class_8_1_NPC("KID","ä½ å¥½å•Š~");
 
             npcJack.LogName();
             npcKID.LogName();
