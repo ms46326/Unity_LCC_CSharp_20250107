@@ -1,5 +1,7 @@
 using AES.Tools;
 using UnityEngine;
+using System;
+
 namespace KID
 {
     /// <summary>
@@ -55,6 +57,36 @@ namespace KID
             LogSystem.LogWithColor(".................", "#ff3");
 
         }
+
+        private void Start()
+        {
+            // 將整數轉為字串
+            int count = 99;
+            var intToString = Convert.ToString(count);
+            LogSystem.LogWithColor(intToString, "#f96");
+            LogSystem.LogWithColor(intToString.GetType(), "#f96");
+            // 將布林值轉為字串
+            bool isOver = false;
+            var boolToString = Convert.ToString(isOver);
+            LogSystem.LogWithColor(boolToString, "#f96");
+            LogSystem.LogWithColor(boolToString.GetType(), "#f96");
+
+            float move = 3.5f;              // 3.5轉 byte 會回轉偶數 4
+            float move1 = 4.5f;             // 4.5轉 byte 會回轉偶數 4
+            var floatToByte = Convert.ToByte(move);
+            var floatToByte1 = Convert.ToByte(move);
+            LogSystem.LogWithColor(floatToByte, "#6f6");
+            LogSystem.LogWithColor(floatToByte1, "#6f6");
+            LogSystem.LogWithColor(floatToByte.GetType(), "#6f6");
+
+            // true = 1 , false = 0
+            bool isGrounded = true;
+            var boolToByte = Convert.ToByte(isGrounded);
+            LogSystem.LogWithColor(boolToByte, "#6f6");
+            LogSystem.LogWithColor(boolToByte.GetType(), "#6f6");
+
+        }
+
     }
 }
 
