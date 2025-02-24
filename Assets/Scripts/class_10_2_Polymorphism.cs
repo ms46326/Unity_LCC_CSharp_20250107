@@ -1,25 +1,25 @@
-using AES.Tools;
+ï»¿using AES.Tools;
 using UnityEngine;
 namespace KID
 {
     /// <summary>
-    /// ¦h§Î Polymorphism
+    /// å¤šå½¢ Polymorphism
     /// </summary>
     public class class_10_2_Polymorphism : MonoBehaviour
     {
         private void Awake()
         {
-            Trap trap1 = new Trap("¸¨¥Ş",3);
-            Magic magic1 = new Magic("¦ºªÌµd¿ô",5);
-            // ¦h«¬¡G¦hºØ«¬¦¡¡A¥i¥H¨Ï¥Î¤÷Ãş§O©ÎªÌ¦Û¤vªº¦¨­û
+            Trap trap1 = new Trap("è½ç©´",3);
+            Magic magic1 = new Magic("æ­»è€…ç”¦é†’",5);
+            // å¤šå‹ï¼šå¤šç¨®å‹å¼ï¼Œå¯ä»¥ä½¿ç”¨çˆ¶é¡åˆ¥æˆ–è€…è‡ªå·±çš„æˆå“¡
             trap1.Information();
             trap1.Information(37);
 
-            // ¦h«¬¡G«Å§i®É¨Ï¥Î¤÷Ãş§O¡A¹ê¨Ò¤ÆªºÃş§O·|¨M©w«¬¦¡
-            Card card1 = new Card("¤@¯ë¥d¤ù", 0);
-            Card magic2 = new Magic("¦Ğ¤ò±½", 7);
-            card1.Information();        // «¬¦¡1¡G©I¥s Card ªº¤èªk
-            magic2.Information();       // «¬¦¡2¡G©I¥s Magic ªº¤èªk
+            // å¤šå‹ï¼šå®£å‘Šæ™‚ä½¿ç”¨çˆ¶é¡åˆ¥ï¼Œå¯¦ä¾‹åŒ–çš„é¡åˆ¥æœƒæ±ºå®šå‹å¼
+            Card card1 = new Card("ä¸€èˆ¬å¡ç‰‡", 0);
+            Card magic2 = new Magic("ç¾½æ¯›æƒ", 7);
+            card1.Information();        // å‹å¼1ï¼šå‘¼å« Card çš„æ–¹æ³•
+            magic2.Information();       // å‹å¼2ï¼šå‘¼å« Magic çš„æ–¹æ³•
 
         }
     }
@@ -35,7 +35,7 @@ namespace KID
         }
         public virtual void Information() 
         {
-            LogSystem.LogWithColor($"{name}³o¬O¤@±i¥dµP", "#3f3");
+            LogSystem.LogWithColor($"{name}é€™æ˜¯ä¸€å¼µå¡ç‰Œ", "#3f3");
         }
     }
 
@@ -46,7 +46,7 @@ namespace KID
         }
         public void Information(int index)
         {
-            LogSystem.LogWithColor($"³o¬O¤@±i³´¨À¥dµP ½s¸¹¡G{index}", "#f77");
+            LogSystem.LogWithColor($"é€™æ˜¯ä¸€å¼µé™·é˜±å¡ç‰Œ ç·¨è™Ÿï¼š{index}", "#f77");
         }
     }
 
@@ -58,7 +58,7 @@ namespace KID
 
         public override void Information() 
         {
-            LogSystem.LogWithColor($"{name}³o¬O¤@±iÅ]ªk¥dµP", "#77f");
+            LogSystem.LogWithColor($"{name}é€™æ˜¯ä¸€å¼µé­”æ³•å¡ç‰Œ", "#77f");
         }
     }
 }
