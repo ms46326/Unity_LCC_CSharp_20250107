@@ -39,9 +39,9 @@ namespace KID
         {
             // 非靜態成員
             slimeGreen.hp -= 10;
-            Debug.Log($"<color=#3f3>綠史萊姆：{slimeGreen.hp}</color>");
+            Debug.Log($"<color=#3f3>綠史萊姆 HP：{slimeGreen.hp}</color>");
             slimeBlue.hp -= 10;
-            Debug.Log($"<color=#3f3>藍史萊姆：{slimeBlue.hp}</color>");
+            Debug.Log($"<color=#3f3>藍史萊姆 HP：{slimeBlue.hp}</color>");
 
             // 靜態成員
             // 靜態成員沒辦法透過個體存取
