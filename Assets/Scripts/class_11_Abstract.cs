@@ -25,7 +25,7 @@ namespace KID
             // 向上轉型可以使用多型
             Monster fly = new FlyDragon();
             fly.Track();
-            fly.Track(50);
+            // fly.Track(50);       // 錯誤：父類別沒有速度的方法，所以沒辦法放參數。
 
             FlyDragon fly2 = new FlyDragon();
             fly2.Track();
