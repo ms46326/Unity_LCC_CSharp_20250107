@@ -1,4 +1,5 @@
 ﻿using AES.Tools;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 namespace KID.Class_15
 {
@@ -97,20 +98,93 @@ namespace KID.Class_15
             T temp = a;
             a = b;
             b = temp;
-        } 
+        }
         #endregion
-    }
 
-    public class DataPlayer<T> 
-    {
-        public T data;
-
-        public void LogData(T data) 
+        private void Start()
         {
-            LogSystem.LogWithColor(data, "#3ff");
+            var player = new Player();
+            var enemy = new Enemy();
+            var attactEvent = new AttactEvent<Player,Enemy>();
+            attactEvent.Attact(player, enemy);
+
+            var hp = new HP();
+            var attack = new Attack();
+            hp.Increase(10.5f);
+            attack.Increase(50);
+            hp.Increase(3.75f);
+
+            var checter = new CheckValue<HP, float>();
+            checter.Chect(hp);
         }
     }
-
-
 }
+#region 泛型類別
+//  這是上一次課程內容
+public class DataPlayer<T>
+{
+    public T data;
+
+    public void LogData(T data)
+    {
+        LogSystem.LogWithColor(data, "#3ff");
+    }
+}
+
+
+public class Player { }
+public class Enemy { }
+
+public class AttactEvent<T, U>
+{
+    public void Attact(T attacter, U defender)
+    {
+        LogSystem.LogWithColor($"{attacter}攻擊{defender}", "#f3f");
+    }
+}
+#endregion
+
+#region 泛型介面
+// 泛型介面
+// 宣告泛型介面
+public interface IStat<T>
+{
+    public T value { get; set; }    // 該狀態的值
+    public void Increase(T amount); // 增加該狀態
+}
+
+// 實作泛型介面
+public class HP : IStat<float>
+{
+    public float value { get; set; }
+
+    public void Increase(float amount)
+    {
+        value += amount;
+        LogSystem.LogWithColor($"血量：{value}", "#f3f");
+    }
+}
+
+public class Attack : IStat<int>
+{
+    public int value { get; set; }
+
+    public void Increase(int amount)
+    {
+        value += amount;
+        LogSystem.LogWithColor($"攻擊力：{value}", "#f3f");
+    }
+}
+#endregion
+
+// 泛型約束：泛型 T 必須實作 IStat<T> 介面
+public class CheckValue<T,U> where T : IStat<U> 
+{
+    public void Chect(T stat) 
+    {
+        // 添加約束後可以使用 IStat<T> 成員
+        LogSystem.LogWithColor($"狀態的值：{stat.value}", "#3d3");
+    }
+}
+
 
