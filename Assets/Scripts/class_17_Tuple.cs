@@ -30,7 +30,10 @@ namespace KID.Class_17
             UseCard(card2);
             UseCard(("暴熊",7,199));
             
-
+            var card1Updata = UpdataCardCost(card1);
+            LogSystem.LogWithColor($"{card1Updata.name} | 消耗：{card1Updata.cost} | 編號：{card1Updata.index}", "#f49");
+            LogSystem.LogWithColor($"{card1Updata == card1}", "#79f");
+            LogSystem.LogWithColor($"{card1Updata != card1}", "#79f");
         }
 
         private void UseCard((string name,int cost,int index) card)
@@ -38,7 +41,19 @@ namespace KID.Class_17
             LogSystem.LogWithColor($"編號 {card.cost} | 使用卡牌：{card.name}", "#7f7");
         }
 
-
+        
+        
+        /// <summary>
+        /// 降低卡牌消耗
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns>降低消耗的卡牌</returns>
+        private (string name, int cost, int index) UpdataCardCost((string name, int cost, int index) card) 
+        {
+            card.name = card.name + "降低消耗版本";
+            card.cost -= 1;
+            return card;
+        }
 
 
     }
